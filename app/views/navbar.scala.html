@@ -1,0 +1,29 @@
+
+@(activePage: String)
+
+
+<html>
+    <nav class="navbar" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="@if(activePage == "Home") {active}"><a href="@routes.Application.index()">Home</a></li>
+                    <li class="@if(activePage == "About Us") {active}"><a href="#">About Us</a></li>
+                    <li class="@if(activePage == "Products") {active}"><a href="#">Products</a></li>
+                    <li class="@if(activePage == "Gallery") {active}"><a href="#">Gallery</a></li>
+                    <li class="@if(activePage == "Contacts") {active}"><a href="#">Contacts</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</html>
