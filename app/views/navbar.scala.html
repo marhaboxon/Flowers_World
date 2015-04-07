@@ -18,9 +18,9 @@
                 <ul class="nav navbar-nav">
                     <li class="@if(activePage == "Home") {active}"><a href="@routes.Application.index()">Home</a></li>
                     <li class="@if(activePage == "About Us") {active}"><a href="#">About Us</a></li>
-                    <li class="@if(activePage == "Products") {active}"><a href="#">Products</a></li>
+                    <li class="@if(activePage == "Products") {active}"><a href="@routes.Flowers.list()">Products</a></li>
                     <li class="@if(activePage == "Gallery") {active}"><a href="#">Gallery</a></li>
-                    <li class="@if(activePage == "Contacts") {active}"><a href="#">Contacts</a></li>
+                    <li class="@if(activePage == "Contacts") {active}"><a href="@routes.Flowers.add()">Contacts</a></li>
 
                 </ul>
             </div>

@@ -1,0 +1,30 @@
+@()
+
+@main("New Flowers") {
+
+    @navbar("add")
+<div class="container">
+        <h2 class="text-center">Add new flowers</h2>
+        <form class="@routes.Flowers.add()" method="post">
+            <div class="form-group">
+            <label for="inp-country">Type</label>
+            <input type="text" class="form-control" id="inp-type"
+            name="types" required="">
+        </div>
+            <div class="form-group">
+                <label for="inp-name">Name</label>
+                <input type="text" class="form-control" id="inp-name"
+                name="name" required="">
+            </div>
+            <div class="form-group">
+                <label for="inp-desc">Description</label>
+                <textarea type="text" class="form-control" id="inp-desc"
+                name="description" required=""></textarea>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+    </div>
+}

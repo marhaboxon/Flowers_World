@@ -1,0 +1,32 @@
+@(flowers: List[Flower])
+
+@main("List"){
+    @navbar("list")
+<div class="container">
+    <h1 class="text-center">World's most beautiful flowers.</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        @for(flower <- flowers) {
+            <tr>
+                <td>@flower.types</td>
+                <td>@flower.name</td>
+                <td>@flower.description</td>
+                <td>
+                    <a href="@routes.Flowers.remove(flower.id.get)">
+                        <button class="btn btn-danger">Delete</button>
+                    </a>
+                </td>
+            </tr>
+}
+    </tbody>
+    </table>
+</div>
+}

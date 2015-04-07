@@ -3,8 +3,13 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index
+GET         /                          controllers.Application.index
+GET         /flowers/new               @controllers.Flowers.showAddForm
+GET         /flowers/list              @controllers.Flowers.list
+POST        /flowers/new               @controllers.Flowers.add
+GET         /flowers/:id/remove        @controllers.Flowers.remove(id: Int)
+
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET         /assets/*file              controllers.Assets.at(path="/public", file)
 
     
