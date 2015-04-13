@@ -1,4 +1,4 @@
-@(flowers: List[Flower])
+@(flowers: List[Flowers_Type])
 
 @main("List"){
     @navbar("list")
@@ -7,20 +7,27 @@
     <table class="table">
         <thead>
             <tr>
+                <th>Image</th>
                 <th>Type</th>
                 <th>Name</th>
                 <th>Description</th>
+                <th>cost</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
-        @for(flower <- flowers) {
+        @for(flowerObj <- flowers) {
             <tr>
-                <td>@flower.types</td>
-                <td>@flower.name</td>
-                <td>@flower.description</td>
+                <td><img style="width: 30%;" src="@routes.Assets.at("images/"+flowerObj.flower.imgName)" alt=""/></td>
+                <td>@flowerObj.typeName</td>
+                <td>@flowerObj.flower.name</td>
+                <td>@flowerObj.flower.description</td>
+                <td>@flowerObj.flower.cost</td>
                 <td>
-                    <a href="@routes.Flowers.remove(flower.id.get)">
+                    <a href="@routes.Flowers.showEdit(flowerObj.flower.id.get)">
+                        <button class="btn btn-warning">Edit</button>
+                    </a>
+                    <a href="@routes.Flowers.remove(flowerObj.flower.id.get)">
                         <button class="btn btn-danger">Delete</button>
                     </a>
                 </td>

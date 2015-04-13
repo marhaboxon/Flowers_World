@@ -1,0 +1,18 @@
+@(f_type: Type)
+
+@main("Edit") {
+
+    @navbar("addCountry")
+
+    <div class="container main-content">
+        <h2 class="text-center">Edit type</h2>
+        <form class="@routes.Types.update(f_type.id.get)" method="post">
+            <div class="form-group">
+                <label for="inp-name">Name</label>
+                <input type="text" class="form-control" id="inp-name"
+                name="name" value="@f_type.name" required="">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+}

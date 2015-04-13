@@ -18,10 +18,11 @@
                 <ul class="nav navbar-nav">
                     <li class="@if(activePage == "Home") {active}"><a href="@routes.Application.index()">Home</a></li>
                     <li class="@if(activePage == "About Us") {active}"><a href="#">About Us</a></li>
-                    <li class="@if(activePage == "Products") {active}"><a href="@routes.Flowers.list()">Products</a></li>
+                    <li class="@if(activePage == "Products") {active}"><a href="@routes.Flowers.list()">Flowers</a></li>
+                    <li class="@if(activePage == "Contacts") {active}"><a href="@routes.Flowers.add()">Add new flowers</a></li>
+                    <li class="@if(activePage == "Flw-type") {active}"><a href="@routes.Types.list()">Flowers Type</a></li>
                     <li class="@if(activePage == "Gallery") {active}"><a href="#">Gallery</a></li>
-                    <li class="@if(activePage == "Contacts") {active}"><a href="@routes.Flowers.add()">Contacts</a></li>
-
+                    <li class="@if(activePage == "Flw-type") {active}"><a href="@routes.Types.add()">New flowers type</a></li>
                 </ul>
             </div>
         </div>

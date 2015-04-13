@@ -3,13 +3,23 @@
 # ~~~~
 
 # Home page
-GET         /                          controllers.Application.index
-GET         /flowers/new               @controllers.Flowers.showAddForm
-GET         /flowers/list              @controllers.Flowers.list
-POST        /flowers/new               @controllers.Flowers.add
-GET         /flowers/:id/remove        @controllers.Flowers.remove(id: Int)
+GET         /                         controllers.Application.index
+GET         /flowers/new              @controllers.Flowers.showAdd
+GET         /flowers/list             @controllers.Flowers.list
+POST        /flowers/new              @controllers.Flowers.add
+GET         /flower/:id/remove        @controllers.Flowers.remove(id: Int)
+POST        /flower/:id/edit          @controllers.Flowers.update(id: Int)
+GET         /flower/:id/edit          @controllers.Flowers.showEdit(id: Int)
+
+
+GET         /types/list               @controllers.Types.list
+GET         /types/new                @controllers.Types.showAdd
+POST        /types/new                @controllers.Types.add
+GET         /type/:id/remove          @controllers.Types.remove(id: Int)
+POST        /type/:id/edit            @controllers.Types.update(id: Int)
+GET         /type/:id/edit            @controllers.Types.showEdit(id: Int)
 
 # Map static resources from the /public folder to the /assets URL path
-GET         /assets/*file              controllers.Assets.at(path="/public", file)
+GET         /assets/*file             controllers.Assets.at(path="/public", file)
 
     
