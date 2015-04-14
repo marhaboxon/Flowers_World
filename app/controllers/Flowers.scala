@@ -38,6 +38,7 @@ class Flowers extends Controller {
 
     val flowerId = (flowers returning flowers.map(_.id)) += Flower(None, imgName, typeId, name, description, cost)
     Logger.info(s"LastId = $flowerId")
+
     Redirect(routes.Flowers.list())
   }
 
@@ -48,8 +49,8 @@ class Flowers extends Controller {
   }
   def update(id: Int) = DBAction { implicit rs =>
     val formParams = rs.body.asFormUrlEncoded
-    val imgName = formParams.get("img")(0)
-    val typeId = formParams.get("country")(0).toInt
+    val imgName = formParams.get("imgName")(0)
+    val typeId = formParams.get("type")(0).toInt
     val name = formParams.get("name")(0)
     val description = formParams.get("description") (0)
     val cost = formParams.get("cost")(0)

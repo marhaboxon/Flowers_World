@@ -3,7 +3,7 @@
 @main("List"){
     @navbar("list")
 <div class="container">
-    <h1 class="text-center">World's most beautiful flowers.</h1>
+    <h1 class="text-center">Beautiful flowers.</h1>
     <table class="table">
         <thead>
             <tr>
@@ -18,7 +18,7 @@
         <tbody>
         @for(flowerObj <- flowers) {
             <tr>
-                <td><img style="width: 30%;" src="@routes.Assets.at("images/"+flowerObj.flower.imgName)" alt=""/></td>
+                <td><img style="width: 150px; height: 120px" src="@routes.Assets.at("images/"+flowerObj.flower.imgName)"  class="img-responsive" alt=""/></td>
                 <td>@flowerObj.typeName</td>
                 <td>@flowerObj.flower.name</td>
                 <td>@flowerObj.flower.description</td>
